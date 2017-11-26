@@ -4,10 +4,13 @@
 <html>
 <head>
     <title>Add book</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/index.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/styly.css"/>"/>
 </head>
 <body>
 <div id="main">
+    <div id="header">
+        <img width="860" src="../resources/images/head.png">
+    </div>
     <div id="dialog">
         <div id="name1">
             <h2>Create task</h2>
@@ -15,13 +18,13 @@
 
         <div id="search">
             <form action="${pageContext.servletContext.contextPath}/create" method="POST">
-                <label for="name">Name Task : </label>
+                <label for="name task">Name Task : </label>
                 <input type="text" name="nameTask">
                 <br>
-                <label for="author">Task : </label>
-                <input type="text" name="task">
+                <label for="task">Task : </label>
+                <input class="sdvig" type="text" name="task">
                 <br>
-                <input type="submit" align="center" value="Ok"/>
+                <input type="submit" align="center" value="Ok" class="sub2"/>
             </form>
         </div>
     </div>

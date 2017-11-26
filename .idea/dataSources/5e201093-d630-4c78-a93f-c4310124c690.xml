@@ -31,7 +31,7 @@
     </column>
     <column id="17" parent="14" name="Task">
       <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="18" parent="14" name="PRIMARY">

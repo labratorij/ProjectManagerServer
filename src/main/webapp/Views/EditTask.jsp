@@ -4,11 +4,13 @@
 <html>
 <head>
     <title>Edit book</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/index.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/styly.css"/>"/>
 </head>
 <body>
 <div id="main">
-
+    <div id="header">
+        <img width="860" src="../resources/images/head.png">
+    </div>
     <div id="dialog">
 
         <div id="name2">
@@ -17,13 +19,13 @@
 
         <div id="search">
             <form action="${pageContext.servletContext.contextPath}/edit" method="POST">
-                <label for="name">New Name Task : </label>
+                <label for="nameTask">Name Task : </label>
                 <input type="text" name="nameTask">
                 <br>
-                <label for="task">New Task : </label>
-                <input type="text" name="task">
+                <label for="task">Task : </label>
+                <input type="text" name="task" class="sdvig">
                 <br>
-               <input type="submit" align="center" value="Edit"/>
+               <input type="submit" align="center" value="Edit" class="sub2"/>
             </form>
         </div>
     </div>
