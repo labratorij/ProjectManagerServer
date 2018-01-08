@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="task_manager@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="task_manager">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="books"/>
+    <schema id="4" parent="1" name="chatproject"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="labrary"/>
+    <schema id="7" parent="1" name="mydb"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="projectmanager"/>
+    <schema id="11" parent="1" name="sakila"/>
+    <schema id="12" parent="1" name="sys"/>
+    <schema id="13" parent="1" name="tasks"/>
+    <schema id="14" parent="1" name="world"/>
+    <table id="15" parent="2" name="company"/>
+    <table id="16" parent="2" name="person"/>
+    <table id="17" parent="2" name="person_has_tasks"/>
+    <table id="18" parent="2" name="person_has_team"/>
+    <table id="19" parent="2" name="tasks"/>
+    <table id="20" parent="2" name="team"/>
+    <column id="21" parent="15" name="name_company">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="15" name="specialize">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="23" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>name_company</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="16" name="login">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="16" name="surname">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="16" name="gender">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="16" name="password">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="29" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>login</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="17" name="Person_login">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="17" name="Tasks_idTasks">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="17" name="fk_Person_has_Tasks_Person_idx">
+      <ColNames>Person_login</ColNames>
+    </index>
+    <index id="33" parent="17" name="fk_Person_has_Tasks_Tasks1_idx">
+      <ColNames>Tasks_idTasks</ColNames>
+    </index>
+    <key id="34" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Person_login
+Tasks_idTasks</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="17" name="fk_Person_has_Tasks_Person">
+      <ColNames>Person_login</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>login</RefColNames>
+    </foreign-key>
+    <foreign-key id="36" parent="17" name="fk_Person_has_Tasks_Tasks1">
+      <ColNames>Tasks_idTasks</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>tasks</RefTableName>
+      <RefColNames>idTasks</RefColNames>
+    </foreign-key>
+    <column id="37" parent="18" name="Person_login">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="18" name="team_id_Team">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="18" name="fk_Person_has_team_Person1_idx">
+      <ColNames>Person_login</ColNames>
+    </index>
+    <index id="40" parent="18" name="fk_Person_has_team_team1_idx">
+      <ColNames>team_id_Team</ColNames>
+    </index>
+    <key id="41" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Person_login
+team_id_Team</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="18" name="fk_Person_has_team_Person1">
+      <ColNames>Person_login</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>person</RefTableName>
+      <RefColNames>login</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="18" name="fk_Person_has_team_team1">
+      <ColNames>team_id_Team</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>team</RefTableName>
+      <RefColNames>id_Team</RefColNames>
+    </foreign-key>
+    <column id="44" parent="19" name="idTasks">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="19" name="Name_Task">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="19" name="Task">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="19" name="company_name_company">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="19" name="team_id_Team">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="49" parent="19" name="fk_Tasks_company1_idx">
+      <ColNames>company_name_company</ColNames>
+    </index>
+    <index id="50" parent="19" name="fk_Tasks_team1_idx">
+      <ColNames>team_id_Team</ColNames>
+    </index>
+    <key id="51" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idTasks
+company_name_company
+team_id_Team</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="19" name="fk_Tasks_company1">
+      <ColNames>company_name_company</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>company</RefTableName>
+      <RefColNames>name_company</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="19" name="fk_Tasks_team1">
+      <ColNames>team_id_Team</ColNames>
+      <RefSchemaName>task_manager</RefSchemaName>
+      <RefTableName>team</RefTableName>
+      <RefColNames>id_Team</RefColNames>
+    </foreign-key>
+    <column id="54" parent="20" name="id_Team">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="20" name="name_team">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="56" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_Team</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

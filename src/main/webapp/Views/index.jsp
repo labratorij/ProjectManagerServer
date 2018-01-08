@@ -20,8 +20,8 @@
                 <input type="submit" value="Ok" class="sub"/>
         </form>
         <div id="center">
-        <a class = "one" href="${pageContext.servletContext.contextPath}/Views/Create.jsp">Add Book</a>
-        <a class = "one" href="${pageContext.servletContext.contextPath}/">Reset search</a>
+        <a class = "one" href="${pageContext.servletContext.contextPath}/Views/Create.jsp">Add task</a>
+        <a class = "one" href="${pageContext.servletContext.contextPath}/">Reset</a>
         </div>
         <br><br><table>
             <tr>

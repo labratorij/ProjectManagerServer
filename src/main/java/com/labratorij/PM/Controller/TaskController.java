@@ -3,7 +3,6 @@ package com.labratorij.PM.Controller;
 
 import com.labratorij.PM.Entity.Tasks;
 import com.labratorij.PM.Services.TaskServices;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import java.util.Objects;
 
 @Controller
 @ComponentScan("com.labratorij.PM")
@@ -20,7 +19,7 @@ public class TaskController {
 
     private final TaskServices taskServices;
 
-    @Autowired
+
     public TaskController(TaskServices taskServices) {
         this.taskServices = taskServices;
     }
@@ -48,6 +47,7 @@ public class TaskController {
         taskServices.add(new Tasks(name, task));
         return "redirect:/";
     }
+
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam("id") int id, ModelMap model){
